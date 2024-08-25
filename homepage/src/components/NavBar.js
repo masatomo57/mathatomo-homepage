@@ -14,7 +14,7 @@ export default function NavBar() {
           <Link href="/favorite" className="text-white">Favorite</Link>
         </li>
         <li>
-          <Link href="/article" className="text-white">Article</Link>
+          <Link href="/product" className="text-white">Product</Link>
         </li>
         <li>
           <Link href="/blog" className="text-white">Blog</Link>
