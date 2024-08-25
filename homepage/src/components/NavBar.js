@@ -11,9 +11,6 @@ export default function NavBar() {
           <Link href="/profile" className="text-white">Profile</Link>
         </li>
         <li>
-          <Link href="/favorite" className="text-white">Favorite</Link>
-        </li>
-        <li>
           <Link href="/product" className="text-white">Product</Link>
         </li>
         <li>
