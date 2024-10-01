@@ -15,10 +15,10 @@ export default function Profile() {
             <li>北海道札幌手稲高等学校 → 北海道大学理学部数学科 → 北海道大学大学院理学院数学専攻 → ...</li>
             <li>　</li>
             <li className="font-bold">数学</li>
-            <li>微分トポロジー / シンプレクティック・接触幾何 / シュタイン多様体 / Weinsteinハンドル / h同境定理</li>
+            <li>微分トポロジー / シンプレクティック・接触幾何 / Weinsteinハンドル / h同境定理</li>
             <li>　</li>
             <li className="font-bold">技術</li>
-            <li>Python(Django, Flask, FastAPI...) / JavaScript(React, NextJS) / HTML&CSS / SQLite / Scala / C / GitHub / Figma / LaTeX</li>
+            <li>Python(Django, Flask, FastAPI...) / JavaScript(React, Next.js) / HTML&CSS / SQLite / LaTeX  / GitHub / Figma / Scala / C / Go</li>
             <li>　</li>
             <li className="font-bold">学生時代の課外活動</li>
             <li>

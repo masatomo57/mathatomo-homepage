@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Card from "@/components/card"
+import Card from "@/components/card/card"
 
 export default function Blog() {
     // postsディレクトリからファイル名を取得
@@ -13,18 +13,15 @@ export default function Blog() {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = fs.readFileSync(filePath, 'utf-8');
       const { data: frontMatter } = matter(fileContents);
-      const slug = filename.replace('.md', '');
+      const id = filename.replace('.md', '');
 
       return {
         title: frontMatter.title,
         date: frontMatter.date,
         tag: frontMatter.tag || [],
-        slug: slug,
+        id: id,
       };
-    });
-
-    // 日付でソート（新しい順）
-    posts.sort((a, b) => b.date - a.date);
+    }).reverse();
 
     return (
       <div className="p-8 text-amber-600 min-h-screen bg-gray-100">
@@ -32,22 +29,14 @@ export default function Blog() {
           <div className="flex flex-wrap justify-center gap-6">
           {posts.map((post) => (
               <Card
-                key={post.slug}
+                key={post.id}
                 image=""
-                url={`/blog/${post.slug}`}
+                url={`/blog/${post.id}`}
                 title={post.title}
                 discription={post.date}
                 tag={post.tag}
               />
           ))}
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
-          <Card image="" url="" title="サンプル" discription="サンプル" tag={["サンプル"]} />
         </div>
       </div>
     )
