@@ -20,8 +20,10 @@ export default async function BlogPost({ params }) {
       <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
       <p className="text-gray-600">{frontMatter.date}</p>
       <div className="px-6 pt-4 pb-2">
-          {frontMatter.tag?.map(item => (
-              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{item}</span>
+          {frontMatter.tag?.map((item, index) => (
+              <span key={index} class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {item}
+              </span>
           ))}
       </div>
       <div className="px-10 pt-4 pb-2">
