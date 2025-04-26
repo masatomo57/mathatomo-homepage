@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Card({ image, url, title, discription, tag=[] }) {
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 rounded overflow-hidden shadow-lg">
-        <Image src={image} />
+        <Image src={image} alt={title}/>
         <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">
           <Link href={url}>{title}</Link>
