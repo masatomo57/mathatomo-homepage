@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import styles from './styles.module.scss'
 
 export default function NavBar() {
   return (
-    <nav className={`${styles.navbar} bg-gray-800 p-4`}>
+    <nav className={`bg-gray-800 p-4`}>
       <ul className="flex space-x-4">
         <li>
           <Link href="/" className="text-white">Home</Link>
