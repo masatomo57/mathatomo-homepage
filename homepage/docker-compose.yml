@@ -4,8 +4,8 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "80:80"
     volumes:
       - .:/app
     environment:
-      NODE_ENV: development
+      NODE_ENV: ${NODE_ENV}
