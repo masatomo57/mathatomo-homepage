@@ -22,8 +22,11 @@ FROM nginx:alpine AS RUNNER
 # 静的ファイルをコピー
 COPY --from=builder /app/out /usr/share/nginx/html
 
-# nginxの設定ファイルをコピー
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# 開発環境用
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# 本番環境用
+COPY nginx.prod.conf /etc/nginx/conf.d/default.conf
 
 # コンテナがリッスンするポートを指定
 EXPOSE 80
