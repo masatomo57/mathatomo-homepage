@@ -24,7 +24,7 @@ export default function Blog() {
     }).reverse();
 
     return (
-      <div className="p-8 text-amber-600 min-h-full bg-gray-100">
+      <div className="p-8 text-amber-600 min-h-screen bg-gray-100">
         <h1 className="text-3xl font-bold mb-4">Blog</h1>
           <div className="flex flex-wrap justify-center gap-6">
           {posts.map((post) => (

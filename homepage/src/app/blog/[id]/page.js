@@ -16,7 +16,7 @@ export default async function BlogPost({ params }) {
   const { data: frontMatter, content } = matter(fileContent);
 
   return (
-    <div className="p-8 text-amber-600 min-h-full bg-gray-100">
+    <div className="p-8 text-amber-600 min-h-screen bg-gray-100">
       <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
       <p className="text-gray-600">{frontMatter.date}</p>
       <div className="px-6 pt-4 pb-2">
