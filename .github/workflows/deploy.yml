@@ -28,8 +28,20 @@ jobs:
 
         docker build -t $IMAGE_URI ./homepage
         docker push $IMAGE_URI
+    
+    - name: グローバルIP取得
+      id: ip
+      run: echo "IP=$(curl -s https://checkip.amazonaws.com)" >> "$GITHUB_OUTPUT"
 
-    - name: EC2 に SSH 接続して再起動
+    - name: セキュリティグループにIPを追加
+      run: |
+        aws ec2 authorize-security-group-ingress \
+          --group-id ${{ secrets.SECURITY_GROUP_ID }} \
+          --protocol tcp \
+          --port 22 \
+          --cidr ${{ steps.ip.outputs.IP }}/32
+
+    - name: EC2にSSHしてデプロイ
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.EC2_HOST }}
@@ -42,3 +54,12 @@ jobs:
             -v /etc/letsencrypt:/etc/letsencrypt:ro \
             -p 80:80 -p 443:443 \
             756998121759.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
+
+    - name: セキュリティグループからIPを削除
+      if: always()
+      run: |
+        aws ec2 revoke-security-group-ingress \
+          --group-id ${{ secrets.SECURITY_GROUP_ID }} \
+          --protocol tcp \
+          --port 22 \
+          --cidr ${{ steps.ip.outputs.IP }}/32
