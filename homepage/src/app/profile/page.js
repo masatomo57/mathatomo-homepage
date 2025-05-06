@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Profile() {
     return (
-      <div className="p-8 text-amber-600 min-h-screen bg-gray-100">
+      <div className="p-8 text-amber-600 min-h-full bg-gray-100">
         <h1 className="text-3xl font-bold mb-4">まさとも / Masatomo</h1>
         <div className="text-black">
             
