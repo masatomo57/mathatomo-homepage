@@ -1,7 +1,6 @@
 import NavBar from "@/components/navbar/NavBar";
 import "./globals.css";
 
-
 export const metadata = {
   title: "まさとものWebsite",
   description: "まさとものWebsiteです",
@@ -14,9 +13,9 @@ export default function RootLayout({ children }) {
         <meta charset="utf-8" />
         <title>まさとものWebsite</title>
       </head>
-      <body>
+      <body className="h-screen flex flex-col">
         <NavBar />
-        <div className="padding-top: 100px;">
+        <div className="flex-grow">
           {children}
         </div>
       </body>
