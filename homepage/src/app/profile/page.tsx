@@ -5,13 +5,14 @@ import { LuWaypoints, LuActivity } from "react-icons/lu";
 import { BiMath } from "react-icons/bi";
 import { GrFavorite } from "react-icons/gr";
 
+import ImageClip from "@/components/ImageClip";
+
 export default function Profile() {
     return (
       <div className="p-8 text-amber-600 min-h-full bg-gray-100">
         <h1 className="text-3xl font-bold mb-4">まさとも / Masatomo</h1>
         <div className="text-black">
-            
-            <ul>
+          <ul>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><MdOutlinePlace />出身</li>
             <li>北海道小樽市</li>
@@ -34,7 +35,10 @@ export default function Profile() {
             <li className="font-bold flex items-center gap-1"><GrFavorite />好きなもの</li>
             <li>サッカー / 音楽 / アニメ / 漫画 / 美術館 / 映画 / ディズニー / 小説 / お酒 / カレー / 担担麺 / ...</li>
             <li>　</li>
-            </ul>
+          </ul>
+        </div>
+        <div className="my-6">
+          <ImageClip src="/masatomo_1.jpeg" alt="まさとも" shape="rounded" size={240} caption="2025/02/08 角島大橋にて" />
         </div>
       </div>
     )

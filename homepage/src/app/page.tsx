@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa6';
+import ImageClip from '../components/ImageClip';
 
 export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-full bg-gray-100 text-amber-600">
+      <div className="my-6">
+        <ImageClip src="/masatomo_2.jpeg" alt="まさともと宮島の鹿" shape="circle" size={240} />
+      </div>
       <h1 className="text-4xl font-bold">Welcome to まさとも&apos;s Website!</h1>
       <div className="flex flex-row text-center mt-4 gap-4">
         <Link href="https://x.com/mathatomo57" className="underline hover:text-gray-800 flex items-center">
