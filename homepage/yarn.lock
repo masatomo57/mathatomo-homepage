@@ -308,6 +308,24 @@
     "@typescript-eslint/types" "7.2.0"
     eslint-visitor-keys "^3.4.1"
 
+"@typescript/native-preview-darwin-arm64@7.0.0-dev.20250523.1":
+  version "7.0.0-dev.20250523.1"
+  resolved "https://registry.npmjs.org/@typescript/native-preview-darwin-arm64/-/native-preview-darwin-arm64-7.0.0-dev.20250523.1.tgz"
+  integrity sha512-oWJMPD+lfH9/dvHhPSZdTv43lfyZGrn7crytefhkiQPSwP0MIUCpnDkofGP/ML1nv0xx0pwWhH+Ein88NW3LuA==
+
+"@typescript/native-preview@^7.0.0-dev.20250523.1":
+  version "7.0.0-dev.20250523.1"
+  resolved "https://registry.npmjs.org/@typescript/native-preview/-/native-preview-7.0.0-dev.20250523.1.tgz"
+  integrity sha512-CgdgP/gmyaMThY7Fho19nDaTVryn9QV/zD/6w1KfDCn3M4Rq4WvkSc7Ob1ohc4V1XjCSIzg6Ul+HbLEc7xvV4Q==
+  optionalDependencies:
+    "@typescript/native-preview-darwin-arm64" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-darwin-x64" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-linux-arm" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-linux-arm64" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-linux-x64" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-win32-arm64" "7.0.0-dev.20250523.1"
+    "@typescript/native-preview-win32-x64" "7.0.0-dev.20250523.1"
+
 "@ungap/structured-clone@^1.0.0", "@ungap/structured-clone@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz"

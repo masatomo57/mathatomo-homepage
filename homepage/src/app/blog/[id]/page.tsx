@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-export default async function BlogPost({ params }) {
+export default async function BlogPost({ params }: { params: { id: string } }) {
   const { id } = params;
   const filePath = path.join(process.cwd(), 'posts', `${id}.md`);
 
@@ -20,8 +20,8 @@ export default async function BlogPost({ params }) {
       <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
       <p className="text-gray-600">{frontMatter.date}</p>
       <div className="px-6 pt-4 pb-2">
-          {frontMatter.tag?.map((item, index) => (
-              <span key={index} class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          {frontMatter.tag?.map((item: string, index: number) => (
+              <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                 {item}
               </span>
           ))}
