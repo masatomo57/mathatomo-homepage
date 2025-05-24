@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes swing {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-10px); }
+  50% { transform: translateY(0px); }
+  75% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.swing {
+  animation: swing 2s infinite ease-in-out;
+}
+.swing-once {
+  animation: swing 1.5s 1 ease-in-out;
+}
+.swing-hover:hover {
+  animation: swing 1.5s 1 ease-in-out;
+}
