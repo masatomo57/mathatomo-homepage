@@ -26,7 +26,7 @@ jobs:
 
         aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 756998121759.dkr.ecr.ap-northeast-1.amazonaws.com
 
-        docker build -t $IMAGE_URI ./homepage
+        docker build -t $IMAGE_URI ./homepage --no-cache
         docker push $IMAGE_URI
     
     - name: グローバルIP取得
