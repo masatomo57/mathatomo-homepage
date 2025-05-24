@@ -21,18 +21,18 @@ export default function Profile() {
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><FaLaptopCode />エンジニアリング</li>
             <li>Webが好き</li>
-            <li>Go(echo) / JSTS(React, Next, Vue) / Python / AWS ...etc</li>
+            <li>Go(echo) / JSTS(React, Next, Vue) / Python / GitHub / AWS ...etc</li>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><BiMath />数学</li>
             <li>微分トポロジー / シンプレクティック・接触幾何 / Weinsteinハンドル / h同境定理 / Kaliman modification</li>
             <li>　</li>
-            <li className="font-bold flex items-center gap-1"><LuActivity />その他活動</li>
+            <li className="font-bold flex items-center gap-1"><LuActivity />活動</li>
             <li>
                 <Link href="https://www.mathvis.org/" className="underline hover:text-sky-700">数学みえる化プロジェクト</Link> 会員（2020.3〜）
             </li>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><GrFavorite />好きなもの</li>
-            <li>サッカー（北海道コンサドーレ札幌, AC Milan）/ 音楽 / アニメ / 漫画 / 美術館 / 映画 / ディズニー / お酒 / カレー / 担担麺 / ...</li>
+            <li>サッカー / 音楽 / アニメ / 漫画 / 美術館 / 映画 / ディズニー / 小説 / お酒 / カレー / 担担麺 / ...</li>
             <li>　</li>
             </ul>
         </div>
