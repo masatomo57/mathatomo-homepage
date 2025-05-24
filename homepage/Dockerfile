@@ -13,6 +13,9 @@ RUN npm install
 # アプリケーションのソースコードをコピー
 COPY . .
 
+# 読み取り権限を設定
+RUN chmod -R a+r public/
+
 # ビルドを実行
 RUN npm run build
 
