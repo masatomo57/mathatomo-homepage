@@ -1,4 +1,9 @@
 import Link from "next/link"
+import { MdOutlinePlace } from "react-icons/md";
+import { FaLaptopCode } from "react-icons/fa";
+import { LuWaypoints, LuActivity } from "react-icons/lu";
+import { BiMath } from "react-icons/bi";
+import { GrFavorite } from "react-icons/gr";
 
 export default function Profile() {
     return (
@@ -8,27 +13,25 @@ export default function Profile() {
             
             <ul>
             <li>　</li>
-            <li className="font-bold">出身</li>
+            <li className="font-bold flex items-center gap-1"><MdOutlinePlace />出身</li>
             <li>北海道小樽市</li>
             <li>　</li>
-            <li className="font-bold">経歴</li>
+            <li className="font-bold flex items-center gap-1"><LuWaypoints />経歴</li>
             <li>北海道札幌手稲高等学校 → 北海道大学理学部数学科 → 北海道大学大学院理学院数学専攻 → 東京の会社でITエンジニア</li>
             <li>　</li>
-            <li className="font-bold">好きな数学</li>
+            <li className="font-bold flex items-center gap-1"><FaLaptopCode />エンジニアリング</li>
+            <li>Webが好き</li>
+            <li>Go(echo) / JSTS(React, Next, Vue) / Python / AWS ...etc</li>
+            <li>　</li>
+            <li className="font-bold flex items-center gap-1"><BiMath />数学</li>
             <li>微分トポロジー / シンプレクティック・接触幾何 / Weinsteinハンドル / h同境定理 / Kaliman modification</li>
             <li>　</li>
-            <li className="font-bold">技術</li>
-            <li>Python(Django, Flask, FastAPI...) / JavaScript(React, Next.js) / HTML&CSS / SQLite / LaTeX  / GitHub / Figma / Scala / C / Go</li>
-            <li>　</li>
-            <li className="font-bold">その他活動</li>
+            <li className="font-bold flex items-center gap-1"><LuActivity />その他活動</li>
             <li>
                 <Link href="https://www.mathvis.org/" className="underline hover:text-sky-700">数学みえる化プロジェクト</Link> 会員（2020.3〜）
             </li>
             <li>　</li>
-            <li className="font-bold">資格</li>
-            <li>英語検定2級 / 数学検定2級 / 基本情報技術者 / 普通自動車免許</li>
-            <li>　</li>
-            <li className="font-bold">好きなもの</li>
+            <li className="font-bold flex items-center gap-1"><GrFavorite />好きなもの</li>
             <li>サッカー（北海道コンサドーレ札幌, AC Milan）/ 音楽 / アニメ / 漫画 / 美術館 / 映画 / ディズニー / お酒 / カレー / 担担麺 / ...</li>
             <li>　</li>
             </ul>
@@ -36,4 +39,3 @@ export default function Profile() {
       </div>
     )
   }
-  
