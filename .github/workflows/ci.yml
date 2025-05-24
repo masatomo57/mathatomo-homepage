@@ -15,5 +15,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: build前のout確認
+        run: |
+          ls -lh ./homepage/out || true
+          cat ./homepage/out/index.html || true
+
       - name: Build Docker image to validate
         run: docker build -t mathatoms-website ./homepage
+
+      - name: build前後のout確認
+        run: |
+          ls -lh ./homepage/out || true
+          cat ./homepage/out/index.html || true
