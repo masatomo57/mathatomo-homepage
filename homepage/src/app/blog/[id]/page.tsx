@@ -26,7 +26,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
               </span>
           ))}
       </div>
-      <div className="px-10 pt-4 pb-2">
+      <div className="px-0 md:px-10 pt-4 pb-2">
         <article className="prose mt-4 !max-w-none">
           <ReactMarkdown>{content}</ReactMarkdown>
         </article>
