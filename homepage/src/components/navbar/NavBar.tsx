@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CgHome, CgProfile, CgBulb, CgAlbum  } from 'react-icons/cg'
+import { CgHome, CgProfile, CgAlbum  } from 'react-icons/cg'
 
 export default function NavBar() {
   return (
@@ -15,12 +15,6 @@ export default function NavBar() {
           <Link href="/profile" className="text-white items-center">
             <CgProfile size={24} className="inline-block mr-1" />
             Profile
-          </Link>
-        </li>
-        <li>
-          <Link href="/product" className="text-white items-center">
-            <CgBulb size={24} className="inline-block mr-1" />
-            Product
           </Link>
         </li>
         <li>
