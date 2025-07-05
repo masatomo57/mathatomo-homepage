@@ -22,9 +22,9 @@ jobs:
 
     - name: Docker イメージをビルドして ECR に push
       run: |
-        IMAGE_URI=756998121759.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
+        IMAGE_URI=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
 
-        aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 756998121759.dkr.ecr.ap-northeast-1.amazonaws.com
+        aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-northeast-1.amazonaws.com
 
         docker build -t $IMAGE_URI ./homepage --no-cache
         docker push $IMAGE_URI
@@ -50,13 +50,13 @@ jobs:
         script: |
           set -e
           aws ecr get-login-password --region ap-northeast-1 | \
-          docker login --username AWS --password-stdin 756998121759.dkr.ecr.ap-northeast-1.amazonaws.com
-          docker pull 756998121759.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
+          docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-northeast-1.amazonaws.com
+          docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
           docker stop nginx-https || true && docker rm nginx-https || true
           docker run -d --name nginx-https \
             -v /etc/letsencrypt:/etc/letsencrypt:ro \
             -p 80:80 -p 443:443 \
-            756998121759.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-northeast-1.amazonaws.com/namespace/mathatoms-website:latest
 
     - name: セキュリティグループからIPを削除
       if: always()
