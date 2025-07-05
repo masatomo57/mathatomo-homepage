@@ -1,3 +1,4 @@
+
 interface ImageClipProps {
   src: string;
   alt?: string;
@@ -22,7 +23,7 @@ export default function ImageClip({ src, alt = '', shape = 'square', size = 128,
         style={{ width: size, height: size }}
       />
       {caption && (
-        <div className="text-sm text-gray-500 mt-2">
+        <div className="text-sm text-secondary mt-2">
           {caption}
         </div>
       )}

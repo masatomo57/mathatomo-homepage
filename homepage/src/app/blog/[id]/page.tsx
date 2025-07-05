@@ -16,12 +16,12 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
   const { data: frontMatter, content } = matter(fileContent);
 
   return (
-    <div className="p-8 text-amber-600 min-h-full bg-gray-100">
+    <div className="p-8 text-primary min-h-full bg-background-main">
       <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
-      <p className="text-gray-600">{frontMatter.date}</p>
+      <p className="text-secondary">{frontMatter.date}</p>
       <div className="px-6 pt-4 pb-2">
           {frontMatter.tag?.map((item: string, index: number) => (
-              <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              <span key={index} className="inline-block bg-background-tag rounded-full px-3 py-1 text-sm font-semibold text-secondary mr-2 mb-2">
                 {item}
               </span>
           ))}

@@ -9,13 +9,13 @@ export default function Card({ image, url, title, discription, tag=[] }) {
         <div className="font-bold text-xl mb-2">
           <Link href={url}>{title}</Link>
         </div>
-        <p className="text-gray-700 text-base">
+        <p className="text-secondary text-base">
             {discription}
         </p>
         </div>
         <div className="px-6 pt-4 pb-2">
           {tag?.map((item, index) => (
-              <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{item}</span>
+              <span key={index} className="inline-block bg-background-tag rounded-full px-3 py-1 text-sm font-semibold text-secondary mr-2 mb-2">{item}</span>
           ))}
         </div>
     </div>
