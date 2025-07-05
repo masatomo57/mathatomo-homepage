@@ -3,7 +3,7 @@ import { CgHome, CgProfile, CgBulb, CgAlbum  } from 'react-icons/cg'
 
 export default function NavBar() {
   return (
-    <nav className={`bg-gray-800 p-4`}>
+    <nav className="bg-background-navbar p-4">
       <ul className="flex space-x-4">
         <li>
           <Link href="/" className="text-white items-center">

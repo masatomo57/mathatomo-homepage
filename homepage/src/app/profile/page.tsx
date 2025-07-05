@@ -9,9 +9,9 @@ import ImageClip from "@/components/ImageClip";
 
 export default function Profile() {
     return (
-      <div className="p-8 text-amber-600 min-h-full bg-gray-100">
+      <div className="p-8 text-primary min-h-full bg-background-main">
         <h1 className="text-3xl font-bold mb-4">まさとも / Masatomo</h1>
-        <div className="text-black">
+        <div className="text-secondary">
           <ul>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><MdOutlinePlace />出身</li>
@@ -29,7 +29,7 @@ export default function Profile() {
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><LuActivity />活動</li>
             <li>
-                <Link href="https://www.mathvis.org/" className="underline hover:text-sky-700">数学みえる化プロジェクト</Link> 会員（2020.3〜）
+                <Link href="https://www.mathvis.org/" className="underline hover:text-primary">数学みえる化プロジェクト</Link> 会員（2020.3〜）
             </li>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><GrFavorite />好きなもの</li>
