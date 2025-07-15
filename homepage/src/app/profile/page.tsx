@@ -21,8 +21,7 @@ export default function Profile() {
             <li>北海道札幌手稲高等学校 → 北海道大学理学部数学科 → 北海道大学大学院理学院数学専攻 → 東京の会社でITエンジニア</li>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><FaLaptopCode />エンジニアリング</li>
-            <li>Webが好き</li>
-            <li>Go(echo) / JSTS(React, Next, Vue) / Python / GitHub / AWS ...etc</li>
+            <li>Go(echo) / JSTS(React, Next, Vue) / Haskell / Scala / Python / C</li>
             <li>　</li>
             <li className="font-bold flex items-center gap-1"><BiMath />数学</li>
             <li>微分トポロジー / シンプレクティック・接触幾何 / Weinsteinハンドル / h同境定理 / Kaliman modification</li>
