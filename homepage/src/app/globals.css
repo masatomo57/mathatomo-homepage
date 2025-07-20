@@ -9,6 +9,16 @@
   75% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+@keyframes drop-down {
+  0% { 
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .swing {
   animation: swing 2s infinite ease-in-out;
 }
@@ -17,4 +27,19 @@
 }
 .swing-hover:hover {
   animation: swing 1.5s 1 ease-in-out;
+}
+.spin-once {
+  animation: spin-once 1s 1 ease-in-out;
+}
+.drop-down-0 {
+  opacity: 0;
+  animation: drop-down 0.6s 0.3s 1 ease-out forwards;
+}
+.drop-down-1 {
+  opacity: 0;
+  animation: drop-down 0.6s 0.9s 1 ease-out forwards;
+}
+.drop-down-2 {
+  opacity: 0;
+  animation: drop-down 0.6s 1.5s 1 ease-out forwards;
 }

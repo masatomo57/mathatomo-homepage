@@ -77,11 +77,11 @@ export default function Home() {
     <>
       <JsonLd data={jsonLd} />
       <div className="flex flex-col justify-center items-center h-full bg-background-main text-primary">
-        <div className="my-6">
+        <div className="my-6 drop-down-0">
           <ImageClip src="/og_default.jpg" alt="アイコン" shape="circle" size={240} />
         </div>
-        <h1 className="text-4xl font-bold">Welcome to まさとも&apos;s Website!</h1>
-        <div className="flex flex-row text-center mt-4 gap-4">
+        <h1 className="text-4xl font-bold drop-down-1">Welcome to まさとも&apos;s Website!</h1>
+        <div className="flex flex-row text-center mt-4 gap-4 drop-down-2">
           <Link href="https://x.com/mathatomo57" className="underline hover:text-secondary flex items-center">
             <FaXTwitter size={32} className="swing-hover" />
           </Link>
