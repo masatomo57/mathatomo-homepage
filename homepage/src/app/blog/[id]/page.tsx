@@ -3,6 +3,9 @@ import path from 'path';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import { Metadata, ResolvingMetadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { BASE_URL, SITE_NAME } from '@/constants/conf';
@@ -115,7 +118,12 @@ export default async function BlogPost({ params }: Props) {
         </div>
         <div className="px-0 md:px-10 pt-4 pb-2">
           <article className="prose mt-4 !max-w-none">
-            <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+            >
+              {content}
+            </ReactMarkdown>
           </article>
         </div>
       </div>
