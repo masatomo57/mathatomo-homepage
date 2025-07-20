@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa6';
 import ImageClip from '../components/ImageClip';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．"
+};
 
 export default function Home() {
 

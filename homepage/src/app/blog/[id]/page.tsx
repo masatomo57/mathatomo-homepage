@@ -3,8 +3,35 @@ import path from 'path';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { Metadata, ResolvingMetadata } from 'next';
 
-export default async function BlogPost({ params }: { params: { id: string } }) {
+type Props = {
+  params: { id: string };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { id } = params;
+  const filePath = path.join(process.cwd(), 'posts', `${id}.md`);
+  
+  if (!fs.existsSync(filePath)) {
+    return {
+      title: '記事が見つかりません',
+    };
+  }
+  
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const { data: frontMatter } = matter(fileContent);
+  
+  return {
+    title: `${frontMatter.title} - Blog`,
+    description: frontMatter.description || `${frontMatter.title}に関する記事です`,
+  };
+}
+
+export default async function BlogPost({ params }: Props) {
   const { id } = params;
   const filePath = path.join(process.cwd(), 'posts', `${id}.md`);
 

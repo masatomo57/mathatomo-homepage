@@ -4,8 +4,13 @@ import { FaLaptopCode } from "react-icons/fa";
 import { LuWaypoints, LuActivity } from "react-icons/lu";
 import { BiMath } from "react-icons/bi";
 import { GrFavorite } from "react-icons/gr";
-
+import { Metadata } from 'next';
 import ImageClip from "@/components/ImageClip";
+
+export const metadata: Metadata = {
+  title: "Profile",
+  description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
+};
 
 export default function Profile() {
     return (

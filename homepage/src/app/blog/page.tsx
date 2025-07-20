@@ -2,6 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Card from "@/components/card/card"
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
+};
 
 export default function Blog() {
     // postsディレクトリからファイル名を取得
@@ -41,4 +47,3 @@ export default function Blog() {
       </div>
     )
   }
-  
