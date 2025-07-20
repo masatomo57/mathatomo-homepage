@@ -24,7 +24,8 @@ export default function Blog() {
 
       return {
         title: frontMatter.title,
-        date: frontMatter.date,
+        datePublished: frontMatter.datePublished,
+        dateModified: frontMatter.dateModified || frontMatter.datePublished,
         tag: frontMatter.tag || [],
         description: frontMatter.description || `${frontMatter.title}に関する記事です`,
         id: id,
@@ -50,7 +51,8 @@ export default function Blog() {
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.description,
-        "datePublished": post.date,
+        "datePublished": post.datePublished,
+        "dateModified": post.dateModified,
         "keywords": post.tag,
         "url": `https://mathsatomo57.com/blog/${post.id}`,
         "author": {
@@ -72,7 +74,7 @@ export default function Blog() {
                   image=""
                   url={`/blog/${post.id}`}
                   title={post.title}
-                  discription={post.date}
+                  discription={post.datePublished}
                   tag={post.tag}
                 />
             ))}

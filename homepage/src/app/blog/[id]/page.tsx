@@ -48,7 +48,8 @@ export default async function BlogPost({ params }: Props) {
     "@type": "BlogPosting",
     "headline": frontMatter.title,
     "description": frontMatter.description || `${frontMatter.title}に関する記事です`,
-    "datePublished": frontMatter.date,
+    "datePublished": frontMatter.datePublished,
+    "dateModified": frontMatter.dateModified || frontMatter.datePublished,
     "keywords": frontMatter.tag || [],
     "author": {
       "@type": "Person",
@@ -71,7 +72,12 @@ export default async function BlogPost({ params }: Props) {
       <JsonLd data={jsonLd} />
       <div className="p-8 text-primary min-h-full bg-background-main">
         <h1 className="text-3xl font-bold mb-4">{frontMatter.title}</h1>
-        <p className="text-secondary">{frontMatter.date}</p>
+        <p className="text-secondary">
+          公開: {frontMatter.datePublished}
+          {frontMatter.dateModified && frontMatter.dateModified !== (frontMatter.datePublished) && (
+            <span> / 更新: {frontMatter.dateModified}</span>
+          )}
+        </p>
         <div className="px-6 pt-4 pb-2">
             {frontMatter.tag?.map((item: string, index: number) => (
                 <span key={index} className="inline-block bg-background-tag rounded-full px-3 py-1 text-sm font-semibold text-secondary mr-2 mb-2">
