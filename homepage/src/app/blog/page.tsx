@@ -26,6 +26,7 @@ export default function Blog() {
         title: frontMatter.title,
         date: frontMatter.date,
         tag: frontMatter.tag || [],
+        description: frontMatter.description || `${frontMatter.title}に関する記事です`,
         id: id,
       };
     }).reverse();
@@ -48,6 +49,7 @@ export default function Blog() {
       "blogPost": posts.map((post) => ({
         "@type": "BlogPosting",
         "headline": post.title,
+        "description": post.description,
         "datePublished": post.date,
         "keywords": post.tag,
         "url": `https://mathsatomo57.com/blog/${post.id}`,

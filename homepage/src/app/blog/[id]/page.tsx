@@ -47,6 +47,7 @@ export default async function BlogPost({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": frontMatter.title,
+    "description": frontMatter.description || `${frontMatter.title}に関する記事です`,
     "datePublished": frontMatter.date,
     "keywords": frontMatter.tag || [],
     "author": {
