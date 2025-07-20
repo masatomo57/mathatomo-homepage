@@ -78,7 +78,7 @@ export default function Home() {
       <JsonLd data={jsonLd} />
       <div className="flex flex-col justify-center items-center h-full bg-background-main text-primary">
         <div className="my-6">
-          <ImageClip src="/masatomo_2.jpeg" alt="まさともと宮島の鹿" shape="circle" size={240} />
+          <ImageClip src="/og_default.jpg" alt="アイコン" shape="circle" size={240} />
         </div>
         <h1 className="text-4xl font-bold">Welcome to まさとも&apos;s Website!</h1>
         <div className="flex flex-row text-center mt-4 gap-4">
