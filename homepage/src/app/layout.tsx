@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mathsatomo57.com"),
   title: {
     default: "まさとものWebsite",
     template: "%s | まさとものWebsite",
@@ -14,9 +15,15 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180" },
+    ],
   },
   openGraph: {
     title: "まさとものWebsite",
