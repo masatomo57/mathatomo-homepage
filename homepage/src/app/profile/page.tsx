@@ -7,18 +7,19 @@ import { GrFavorite } from "react-icons/gr";
 import { Metadata } from 'next';
 import ImageClip from "@/components/ImageClip";
 import JsonLd from '@/components/JsonLd';
+import { BASE_URL, SITE_NAME } from '@/constants/conf';
 
 export const metadata: Metadata = {
   title: "Profile",
   description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
   openGraph: {
-    title: "Profile | まさとものWebsite",
+    title: `Profile | ${SITE_NAME}`,
     description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
     url: "/profile",
     type: "profile",
     images: [
       {
-        url: "/og_default.jpg",
+        url: `${BASE_URL}/og_default.jpg`,
         width: 800,
         height: 600,
         alt: "まさともの写真",
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Profile | まさとものWebsite",
+    title: `Profile | ${SITE_NAME}`,
     description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
-    images: ["/og_default.jpg"],
+    images: [`${BASE_URL}/og_default.jpg`],
   },
 };
 
@@ -39,7 +40,7 @@ export default function Profile() {
       "@type": "Person",
       "name": "まさとも",
       "alternateName": "Masatomo",
-      "url": "https://mathsatomo57.com/profile",
+      "url": `${BASE_URL}/profile`,
       "description": "ITエンジニア．北海道大学理学部数学科卒業、同大学院理学院数学専攻修了，微分トポロジー専攻．Go, TypeScript, などを使用したソフトウェア開発に従事．趣味でHaskellやを学習中．",
       "jobTitle": "ITエンジニア",
       "birthPlace": {

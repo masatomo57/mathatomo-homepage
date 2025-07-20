@@ -4,18 +4,19 @@ import matter from 'gray-matter';
 import Card from "@/components/card/card"
 import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import { BASE_URL, SITE_NAME } from '@/constants/conf';
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
   openGraph: {
-    title: "Blog | まさとものWebsite",
+    title: `Blog | ${SITE_NAME}`,
     description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
     url: "/blog",
     type: "website",
     images: [
       {
-        url: "/og_default.jpg",
+        url: `${BASE_URL}/og_default.jpg`,
         width: 800,
         height: 600,
         alt: "まさとものブログ",
@@ -24,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | まさとものWebsite",
+    title: `Blog | ${SITE_NAME}`,
     description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
-    images: ["/og_default.jpg"],
+    images: [`${BASE_URL}/og_default.jpg`],
   },
 };
 

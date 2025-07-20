@@ -2,14 +2,15 @@ import NavBar from "@/components/navbar/NavBar";
 import "./globals.css";
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import { BASE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/constants/conf";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mathsatomo57.com"),
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: "まさとものWebsite",
-    template: "%s | まさとものWebsite",
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "まさとものWebsiteです",
+  description: SITE_DESCRIPTION,
   robots: {
     index: true,
     follow: true,
@@ -26,12 +27,12 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "まさとものWebsite",
-    description: "まさとものWebsiteです",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     type: "website",
     images: [
       {
-        url: "/og_default.jpg",
+        url: `${BASE_URL}/og_default.jpg`,
         width: 800,
         height: 600,
         alt: "まさとものアイコン",
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "まさとものWebsite",
-    description: "まさとものWebsiteです",
-    images: ["/og_default.jpg"],
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [`${BASE_URL}/og_default.jpg`],
   },
 };
 
