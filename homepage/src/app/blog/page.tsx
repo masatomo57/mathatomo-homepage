@@ -92,10 +92,9 @@ export default function Blog() {
             {posts.map((post) => (
                 <Card
                   key={post.id}
-                  image=""
                   url={`/blog/${post.id}`}
                   title={post.title}
-                  discription={post.datePublished}
+                  date={post.datePublished}
                   tag={post.tag}
                 />
             ))}
