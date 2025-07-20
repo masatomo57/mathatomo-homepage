@@ -3,9 +3,30 @@ import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react
 import ImageClip from '../components/ImageClip';
 import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import { BASE_URL, SITE_NAME } from '@/constants/conf';
 
 export const metadata: Metadata = {
-  description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．"
+  description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+  openGraph: {
+    title: SITE_NAME,
+    description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: `${BASE_URL}/og_default.jpg`,
+        width: 800,
+        height: 600,
+        alt: "まさとものアイコン",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+    images: [`${BASE_URL}/og_default.jpg`],
+  },
 };
 
 export default function Home() {
@@ -14,8 +35,8 @@ export default function Home() {
     "@type": "Person",
     "name": "まさとも",
     "alternateName": "Masatomo, masatomo57, mathatomo, mathatomo57, mathsatomo, mathsatomo57, マサトモ",
-    "url": "https://mathsatomo57.com",
-    "description": "まさとものWebsite",
+    "url": BASE_URL,
+    "description": SITE_NAME,
     "jobTitle": "ITエンジニア",
     "alumniOf": [
       {

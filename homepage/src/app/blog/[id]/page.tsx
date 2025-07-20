@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { Metadata, ResolvingMetadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import { BASE_URL, SITE_NAME } from '@/constants/conf';
 
 type Props = {
   params: { id: string };
@@ -26,9 +27,36 @@ export async function generateMetadata(
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data: frontMatter } = matter(fileContent);
   
+  const description = frontMatter.description || `${frontMatter.title}に関する記事です`;
+  const title = `${frontMatter.title} - Blog`;
+  
   return {
-    title: `${frontMatter.title} - Blog`,
-    description: frontMatter.description || `${frontMatter.title}に関する記事です`,
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: `/blog/${id}`,
+      type: 'article',
+      publishedTime: frontMatter.datePublished,
+      modifiedTime: frontMatter.dateModified || frontMatter.datePublished,
+      authors: ['まさとも'],
+      tags: frontMatter.tag || [],
+      images: [
+        {
+          url: `${BASE_URL}/og_default.jpg`,
+          width: 800,
+          height: 600,
+          alt: frontMatter.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: [`${BASE_URL}/og_default.jpg`],
+    },
   };
 }
 
@@ -58,13 +86,13 @@ export default async function BlogPost({ params }: Props) {
     "publisher": {
       "@type": "Person",
       "name": "masatomo",
-      "url": "https://mathsatomo57.com"
+      "url": BASE_URL
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://mathsatomo57.com/blog/${id}`
+      "@id": `${BASE_URL}/blog/${id}`
     },
-    "url": `https://mathsatomo57.com/blog/${id}`
+    "url": `${BASE_URL}/blog/${id}`
   };
 
   return (
