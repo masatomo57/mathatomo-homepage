@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Card from "@/components/card/card"
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -23,27 +24,62 @@ export default function Blog() {
 
       return {
         title: frontMatter.title,
-        date: frontMatter.date,
+        datePublished: frontMatter.datePublished,
+        dateModified: frontMatter.dateModified || frontMatter.datePublished,
         tag: frontMatter.tag || [],
+        description: frontMatter.description || `${frontMatter.title}に関する記事です`,
         id: id,
       };
     }).reverse();
 
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "masatomo's Blog",
+      "description": "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
+      "url": "https://mathsatomo57.com/blog",
+      "author": {
+        "@type": "Person",
+        "name": "masatomo"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "masatomo",
+        "url": "https://mathsatomo57.com"
+      },
+      "blogPost": posts.map((post) => ({
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.description,
+        "datePublished": post.datePublished,
+        "dateModified": post.dateModified,
+        "keywords": post.tag,
+        "url": `https://mathsatomo57.com/blog/${post.id}`,
+        "author": {
+          "@type": "Person",
+          "name": "masatomo"
+        }
+      }))
+    };
+
     return (
-      <div className="p-8 text-primary min-h-full bg-background-main">
-        <h1 className="text-3xl font-bold mb-4">Blog</h1>
-          <div className="flex flex-wrap justify-center gap-6">
-          {posts.map((post) => (
-              <Card
-                key={post.id}
-                image=""
-                url={`/blog/${post.id}`}
-                title={post.title}
-                discription={post.date}
-                tag={post.tag}
-              />
-          ))}
+      <>
+        <JsonLd data={jsonLd} />
+        <div className="p-8 text-primary min-h-full bg-background-main">
+          <h1 className="text-3xl font-bold mb-4">Blog</h1>
+            <div className="flex flex-wrap justify-center gap-6">
+            {posts.map((post) => (
+                <Card
+                  key={post.id}
+                  image=""
+                  url={`/blog/${post.id}`}
+                  title={post.title}
+                  discription={post.datePublished}
+                  tag={post.tag}
+                />
+            ))}
+          </div>
         </div>
-      </div>
+      </>
     )
   }
