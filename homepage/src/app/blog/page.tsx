@@ -8,6 +8,26 @@ import JsonLd from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: "Blog",
   description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
+  openGraph: {
+    title: "Blog | まさとものWebsite",
+    description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
+    url: "/blog",
+    type: "website",
+    images: [
+      {
+        url: "/og_default.jpg",
+        width: 800,
+        height: 600,
+        alt: "まさとものブログ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | まさとものWebsite",
+    description: "まさとものWebsiteのBlogです．日々の出来事や勉強したことを書いた記事の一覧ページです．",
+    images: ["/og_default.jpg"],
+  },
 };
 
 export default function Blog() {

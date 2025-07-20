@@ -11,6 +11,26 @@ import JsonLd from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: "Profile",
   description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
+  openGraph: {
+    title: "Profile | まさとものWebsite",
+    description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
+    url: "/profile",
+    type: "profile",
+    images: [
+      {
+        url: "/og_default.jpg",
+        width: 800,
+        height: 600,
+        alt: "まさともの写真",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Profile | まさとものWebsite",
+    description: "まさとものWebsiteのProfleです．経歴や活動内容，趣味を紹介しています．",
+    images: ["/og_default.jpg"],
+  },
 };
 
 export default function Profile() {

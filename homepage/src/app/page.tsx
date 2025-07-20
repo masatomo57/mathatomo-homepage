@@ -5,7 +5,27 @@ import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．"
+  description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+  openGraph: {
+    title: "まさとものWebsite",
+    description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: "/og_default.jpg",
+        width: 800,
+        height: 600,
+        alt: "まさとものアイコン",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "まさとものWebsite",
+    description: "まさとものWebsiteのHomeです．各種SNSへのリンクを掲載しています．",
+    images: ["/og_default.jpg"],
+  },
 };
 
 export default function Home() {

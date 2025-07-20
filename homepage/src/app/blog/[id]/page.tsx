@@ -26,9 +26,36 @@ export async function generateMetadata(
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data: frontMatter } = matter(fileContent);
   
+  const description = frontMatter.description || `${frontMatter.title}に関する記事です`;
+  const title = `${frontMatter.title} - Blog`;
+  
   return {
-    title: `${frontMatter.title} - Blog`,
-    description: frontMatter.description || `${frontMatter.title}に関する記事です`,
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: `/blog/${id}`,
+      type: 'article',
+      publishedTime: frontMatter.datePublished,
+      modifiedTime: frontMatter.dateModified || frontMatter.datePublished,
+      authors: ['まさとも'],
+      tags: frontMatter.tag || [],
+      images: [
+        {
+          url: "/og_default.jpg",
+          width: 800,
+          height: 600,
+          alt: frontMatter.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: ["/og_default.jpg"],
+    },
   };
 }
 
